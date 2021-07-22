@@ -1,0 +1,50 @@
+body {
+    margin: 0; /*у body есть отступы по умолчанию*/
+    font-family: 'Open Sans', sans-serif; /*san-serif - запасной*/
+    font-size: 14px;
+    color: #323232;
+    -webkit-font-smoothing: antialiased;
+    background-color:#f5f5f5;
+}
+
+*,
+*:before, /* не берет во внимание before и after - пишем отдельно*/
+*:after {
+    box-sizing: border-box; /*размер блока = размер + padding + граница*/
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0; /*убираем отступы сверху и снизу для всех заголовков*/
+}
+
+p {
+    margin: 0 0 10px; /*отступ только снизу*/
+}
+
+
+.add_input_fields input {
+  margin: 5px 0;
+  padding: 5px 5px;
+}
+
+.add_input_fields input:focus{
+  outline: none;
+}
+
+.remove_field{            /*this CSS for jQery class*/
+  border: 1px solid #333;
+  padding: 2px 5px;
+  color:#333;
+  border-radius: 2px;
+  background: #efefef;
+}
+.remove_field i{
+  color: #656363;
+}
+.add_field select, .add_field input {
+  margin-right: 4px;
+}
+
+.add_input_fields_button {
+  margin-bottom: 20px;
+}
