@@ -15,7 +15,13 @@ $services = array(
   'test'
 );
 
+$meters = array(
+  'TUV (Tepla voda)',
+  'SUV (Studena voda)',
+  'UT (Ustřední topení)',
+  'Meřič plynu',
 
+);
 
 
 ?>
