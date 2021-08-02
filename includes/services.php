@@ -20,6 +20,7 @@ $meters = array(
   'SUV (Studena voda)',
   'UT (Ustřední topení)',
   'Meřič plynu',
+  'test'
 
 );
 

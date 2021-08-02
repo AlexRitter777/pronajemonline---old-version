@@ -22,29 +22,35 @@ p {
 }
 
 
-.add_input_fields input {
+.add_input_fields input, .add_meters input, .coefficient input {
   margin: 5px 0;
-  padding: 5px 5px;
 }
 
-.add_input_fields input:focus{
-  outline: none;
+.add_input_fields input:focus, .add_meters input:focus,
+.coefficient input:focus {
+  outline: none; 
 }
 
-.remove_field{            /*this CSS for jQery class*/
+.add_field select, .add_field input,
+.add_meters_added_field select, .add_meters_added_field input,
+.coefficient_added_field input {
+  margin-right: 4px;
+}
+
+.add_input_fields_button, .add_meters_button, .add_coefficient_button {
+  margin-bottom: 20px;
+}
+
+.remove_field, .remove_meters, .remove_coefficients {            /*this CSS for jQery class*/
   border: 1px solid #333;
   padding: 2px 5px;
   color:#333;
   border-radius: 2px;
   background: #efefef;
+  font-size: 10px;
 }
-.remove_field i{
+.remove_field i, .remove_meters i, .remove_coefficients i {
   color: #656363;
-}
-.add_field select, .add_field input {
-  margin-right: 4px;
+  
 }
 
-.add_input_fields_button {
-  margin-bottom: 20px;
-}

@@ -63,10 +63,39 @@
      
       <button type="button" class="add_input_fields_button"><i class="add_title">Přidat řádek</i></button><br/>
       
+      <h2 class="subtitle">V. Odečty měřičů</h2>
+
+      <label class="label_text">Vyberte si druh měřiče a zadejte počáteční a koneční stavy</label><br/>
+
+      <div class="add_meters">
+        <select name="meters[]">
+          <?php include 'meters_list.php';?>
+        </select>
+        <input type="number" class="field" name="initialValue[]" step="any" placeholder="Zadej počateční stav"/>
+        <input type="number" class="field" name="endValue[]" step="any" placeholder="Zadej koneční stav"/>
+      </div>
+     
+      <button type="button" class="add_meters_button"><i class="add_title">Přidat řádek</i></button><br/>
+      
+      <label class="label_text">Byly ve vyúčtování od správce použité nějaké koeficienty pro vypočet spotřeby UT (ústředního topení)?</label><br/>
+      <div class="chekbox_coefficient">
+        <label for="ano_coefficient">Ano</label>  
+        <input type="radio" id="ano_coefficient" name="coefficient" value="Ano">
+      </div>
+       <div class="chekbox_coefficient">
+        <label for="ne_coefficient">Ne</label>  
+        <input type="radio" id="ne_coefficient" name="coefficient" value="Ne" checked>
+      </div>
+      <div class="coefficient"></div>
+      
+
+              
+
+
 
       <input type="submit" class="submit_button" value="Odeslat"/>
       
-         
+
 
 
     </form>

@@ -13,6 +13,7 @@ foreach($pausalniNaklad as $tempNaklad) { // список расходов
   echo ($services[$tempNaklad].'<br/>');
 }
 
-
+$coefficient = $_POST['coefficient'];
+echo($coefficient);
 
 ?>
