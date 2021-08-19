@@ -12,16 +12,14 @@ $services = array(
   'Záloha na PCO HZS Praha',
   'Zimní úklid',
   'Fond oprav',
-  'test'
+  
 );
 
 $meters = array(
   'TUV (Tepla voda)',
   'SUV (Studena voda)',
   'UT (Ustřední topení)',
-  'Meřič plynu',
-  'test'
-
+  
 );
 
 

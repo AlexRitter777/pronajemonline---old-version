@@ -4,7 +4,7 @@
   $i = 0;
   while ($i < $metersCount)
   {
-      echo("'<option value =" . $i . ">" . $meters[$i] . "</option>'+");
+      echo("<option value =" . $i . ">" . $meters[$i] . "</option>");
       $i++;
   }
 ?>
