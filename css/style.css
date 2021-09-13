@@ -77,6 +77,14 @@ input, select {
   width: 96%;
 }
 
+.help {
+  display: block;
+  height: 15px;
+  width: 15px;
+  float: right;
+  margin-top: 8px;
+}
+
 .add_field select, .add_field input,
 .add_meters_added_field select, .add_meters_added_field input,
 .coefficient_added_field input {
@@ -103,6 +111,27 @@ input, select {
     float: left;
     margin-right: 5px;
 }
+
+.text-help{
+  display: flex;
+  
+}
+
+.icon_help{
+  display: block;
+  height: 14px;
+  width: 14px;
+  fill: #23558C;
+  transition: fill .1s linear;
+  margin-right: 5px;
+}
+
+.help-right-text{
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
+
 
 .icon_title{
   font-size: 0.9em;
@@ -221,22 +250,60 @@ form{
 }
 
 .submit_button {
-    min-width: 100px;
-    margin-top: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    border-radius: 4px;
-    background-color: #c00;
-    border: 1px solid #c00;
-    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 8%);
-    transition: all .3s ease;
-    opacity: 1;
-    cursor: pointer;
+  min-width: 100px;
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #c00;
+  border: 1px solid #c00;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 8%);
+  transition: all .3s ease;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .submit_button_div {
   text-align: center;
   margin-top: 30px;
+}
+
+.error_field_form {
+  border-color:#c00;
+  border-width: 1.5px;
+}
+
+.errors_field{
+  margin: 15px 23px 15px 0;
+  
+}
+
+.errors {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  padding: 15px 0 15px 30px;
+  font-weight: 600;
+}
+
+#er {
+  margin-bottom: 3px;
+}
+
+.real-hint {
+  position: absolute;
+  display: none;
+  border: 1px solid #EEF0F4;
+  color: #ffffff;
+  background-color: #757575;
+  padding: 8px 10px;
+  width: 167px;
+  text-align: left;
+  font-size: 12px !important;
+  font-weight: 600;
+  line-height: 135%;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 40%);
+  white-space: normal !important;
 }
 

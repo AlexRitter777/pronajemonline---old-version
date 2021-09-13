@@ -57,30 +57,32 @@ echo ('<br/>');
 echo ('<br/>');
 
 //---Период выучтования справце 
-$calcStartDateSec = strtotime($calcStartDate);
-$calcFinishDateSec = strtotime($calcFinishDate);
-$totalCalcSecondsDiff = abs($calcFinishDateSec-$calcStartDateSec);
-$totalCalcMonthsDiff = $totalCalcSecondsDiff / (60*60*24*30);
+$calcStartDateObj = new DateTime($calcStartDate);
+$calcFinishDateObj = new DateTime($calcFinishDate);
+$diff = $calcStartDateObj->diff($calcFinishDateObj);
+$totalCalcMonthsDiff = (($diff->format('%y') * 12) + $diff->format('%m')+ ($diff->format('%d'))/30);
 $totalCalcMonthsDiffRound = round($totalCalcMonthsDiff,1);
-echo('<span><b>Na základě vyučtování spravce za období:</b></span></br>');
 echo($calcStartDate . ' do ' . $calcFinishDate . ' - ' . $totalCalcMonthsDiffRound . ' měs.');
 echo ('<br/>');
 echo ('<br/>');
 
 //---Период выучтования для арендатора
-$rentStartDateSec = strtotime($rentStartDate);
-$rentFinishDateSec = strtotime($rentFinishDate);
-$totalSecondsDiff = abs($rentFinishDateSec-$rentStartDateSec);
-$totalMonthsDiff = $totalSecondsDiff / (60*60*24*30);
-$totalMonthsDiffRound = round($totalMonthsDiff,1);
-echo('<span><b>Období vyučtování:</b></span></br>');
-echo($rentStartDate . ' do ' . $rentFinishDate . ' - ' . $totalMonthsDiffRound . ' měs.');
+
+$rentStartDateObj = new DateTime($rentStartDate);
+$rentFinishDateObj = new DateTime($rentFinishDate);
+$diff = $rentStartDateObj->diff($rentFinishDateObj);
+$totalRentMonthsDiff = (($diff->format('%y') * 12) + $diff->format('%m')+ ($diff->format('%d'))/30);
+$totalRentMonthsDiffRound = round($totalRentMonthsDiff,1);
+echo($rentStartDate . ' do ' . $rentFinishDate . ' - ' . $totalRentMonthsDiffRound . ' měs.');
 echo ('<br/>');
 echo ('<br/>');
+
 
 /*----------------------------Расчет-------------------------------*/
 
-//Показание счетчиков и расчет потреблений
+/*--Показание счетчиков и расчет потреблений--*/
+
+//Показания счетчиков и потребления каждого
 
 echo('<span><b>Odečty meříčů:</b></span></br>');
 
@@ -92,18 +94,28 @@ foreach($appMeters as $meter){
 }
 echo ('<br/>');
 
+//Проверка наличия и учет коэфициентов на отопление
+
 $coefficientValue = $_POST['coefficientValue'];
 echo('<span><b>Použité koeficienty pro UT:</b></span></br>');
-$z = 1;
-foreach($coefficientValue as $coefficientV){
-  echo('K' . $z . ' = ' . $coefficientV . '</br>');
-  $z++;
-}
-echo('</br>');
 
-if (isset($_POST['coefficientValue'])){
-  $coefficientFinal = array_product($coefficientValue);
+if (!isset($_POST['coefficientValue']))
+  echo('<span>Žadné</span><br><br>');
+else {
+  $z = 1;
+  foreach($coefficientValue as $coefficientV){
+    echo('K' . $z . ' = ' . $coefficientV . '</br>');
+    $z++;
+  }
+  echo('</br>');
+
+  //if (isset($_POST['coefficientValue'])){
+    $coefficientFinal = array_product($coefficientValue);
+  //}
+   echo($coefficientFinal);
 }
+
+//Расчет итоговых потреблений
 
 $x=0; 
 foreach($appMeters as $meter){
@@ -187,7 +199,7 @@ $totalHeatingPrice = $heatingPrice * $totalUtValueKoef;
 $totalHeatingPriceRound = round($totalHeatingPrice, 2);
 
 $totalUtilitesPrices = $totalHotWaterPriceRound + $totalColdWaterPriceRound + $totalColdForHotWaterPriceRound + $totalHeatingPriceRound;
-$totalMonthUtilitesPrices = $totalUtilitesPrices / $totalMonthsDiffRound;
+$totalMonthUtilitesPrices = $totalUtilitesPrices / $totalRentMonthsDiffRound;
 $totalMonthUtilitesPricesRound = round($totalMonthUtilitesPrices, 2);
 
 echo('<span><b>Spotřební složky:</b></span></br>');
@@ -203,8 +215,8 @@ echo ('<br/>');
 echo('<span><b>Vyučtování:</b></span></br>');
 $totalMonthCost = $MesicPausalniNakladyRound + $constMonthHotAndHeatingRound + $totalMonthUtilitesPricesRound;
 echo('Celkem náklady za 1 měs: ' . $totalMonthCost . '</br>');
-$totalCost = $totalMonthCost * $totalMonthsDiffRound;
-$totalCostRound = round($totalCost, 2);
+$totalCost = $totalMonthCost * $totalRentMonthsDiffRound;
+$totalCostRound = round($totalCost, 0);
 echo('Celkem náklady za období: ' . $totalCostRound . '</br>');
 echo ('<br/>');
 echo('Úhrazené zálohy za období: ' .  $advancedPayments . '</br>');
@@ -215,6 +227,7 @@ if ($finalDiff < 0)
 else
   echo ('<b>Preplatek:</b>' . $finalDiff);  
 
+//Футер
 
 echo ('<br/>');
 echo ('<br/>');
@@ -223,5 +236,6 @@ echo ('<br/>');
 echo('<p><i>Rentmanage software 2021</i><p>');
 echo ('<br/>');
 echo(date('d.m.Y'));
+echo ('<br/>');
 
 ?>

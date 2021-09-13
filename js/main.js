@@ -14,7 +14,7 @@ $(document).ready(function () {
         '<div class="add_field">'+
         '<select name="pausalniNaklad[]" class="add_select" id="test' + x + '">'+
         '</select>' +
-        '<input type="number" class="currency" name="servicesCost[]" step="any" placeholder="Zadej častku v Kč" />'+
+        '<input type="number" class="currency" name="servicesCost[]" id="servicesCost' + x + '" step="any" placeholder="Zadej častku v Kč" />'+
         '<a href="#" class="remove_field">'+
         '<svg class="icon_minus">'+
         '<use xlink: href = "#minus" >' +
@@ -56,8 +56,8 @@ $(document).ready(function () {
         '<div class="add_meters_added_field">' +
         '<select name="appMeters[]" class="add_select" id="load_php_meters' + y + '">' +
         '</select>' +
-        '<input type="number" class="field" name="initialValue[]" step="any" placeholder="Zadej počateční stav" />' +
-        '<input type="number" class="field" name="endValue[]" step="any" placeholder="Zadej koneční stav"/>' +
+        '<input type="number" class="field" name="initialValue[]" id="initialValue' + y + '" step="any" placeholder="Zadej počateční stav" />' +
+        '<input type="number" class="field" name="endValue[]" id="endValue' + y + '" step="any" placeholder="Zadej koneční stav"/>' +
         '<a href="#" class="remove_meters">' +
         '<svg class="icon_minus">' +
         '<use xlink: href = "#minus" >' +
@@ -87,7 +87,7 @@ $(document).ready(function () {
 //Выбор варианта с коэфициентом и добавление коэфициентов
 
 $(document).ready(function () {
-  var coefficientDiv = $('<div class = "add_coefficient"><div class = "add_coefficient_field"><input type = "number" class = "coefficient_field" id = "coefficient_field" name = "coefficientValue[]" step = "any" placeholder = "zadej koeficient"/><br/></div><a href="#" class="add_coefficient_button"><svg class="icon_plus"><use xlink: href = "#plus"></use></svg><span class="icon_title">Přidat koeficient</span></a></div>');
+  var coefficientDiv = $('<div class = "add_coefficient"><div class = "add_coefficient_field"><input type = "number" class = "coefficient_field" id = "coefficientValue1" name = "coefficientValue[]" step = "any" placeholder = "zadej koeficient"/><br/></div><a href="#" class="add_coefficient_button"><svg class="icon_plus"><use xlink: href = "#plus"></use></svg><span class="icon_title">Přidat koeficient</span></a></div>');
   var checkedAno = $('#ano_coefficient');
   var checkedNe = $('#ne_coefficient');
   var z = 1;
@@ -108,8 +108,7 @@ $(document).ready(function () {
     e.preventDefault();
     if (z < max_coefficients) {
       z++;
-      console.log('ok1');
-      $('.add_coefficient_field').append('<div class = "coefficient_added_field"><input type="number" class="coefficient_field" id="coefficient_field" name="coefficientValue[]" step="any" placeholder="zadej koeficent" /><a href="#" class="remove_coefficients"><svg class="icon_minus"><use xlink: href = "#minus" ></use ></svg ><span class = "icon_title">Odebrat</span></a></div>');
+      $('.add_coefficient_field').append('<div class = "coefficient_added_field"><input type="number" class="coefficient_field" id="coefficientValue' + z + '" name="coefficientValue[]" step="any" placeholder="zadej koeficent" /><a href="#" class="remove_coefficients"><svg class="icon_minus"><use xlink: href = "#minus" ></use ></svg ><span class = "icon_title">Odebrat</span></a></div>');
     }
     if (z == max_coefficients) {
       $('.add_coefficient_button').css('display', 'none');
@@ -129,3 +128,19 @@ $(document).ready(function () {
  
 });
 
+//всплывающие подсказки
+
+$(function () {
+	  $('.icon_help').on("mouseenter", function(e){ 
+	  	e.preventDefault();
+	  	var ypos = $(this).offset().top;
+	  	var xpos = $(this).offset().left+20;
+	  	var RealHint =  $(this).data('hint');
+	  	$(RealHint).css('top',ypos);
+	  	$(RealHint).css('left',xpos);
+	  	$(RealHint).fadeIn(); 
+    })
+    $('.icon_help').on("mouseleave", function(e){ 
+      $(".real-hint").fadeOut(); 
+    })
+});

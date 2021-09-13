@@ -11,7 +11,13 @@ $services = array(
   'Výtah',
   'Záloha na PCO HZS Praha',
   'Zimní úklid',
-  'Fond oprav',
+  'Údržba společných prostor a revize', 
+  'Režie SVJ',
+  'Provozní režie',
+  'Správa domu',
+  'Rozúčtování topných nákladů',
+  'Recepce',
+  'Fond oprav'
   
 );
 
