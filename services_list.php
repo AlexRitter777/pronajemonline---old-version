@@ -7,4 +7,5 @@
       echo("'<option value =" . $i . ">" . $services[$i] . "</option>'+");
       $i++;
   }
+// переделать на класс show options
 ?>

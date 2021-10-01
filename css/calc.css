@@ -1,0 +1,516 @@
+body {
+    margin: 0; /*у body есть отступы по умолчанию*/
+    font-family: 'Open Sans', sans-serif; /*san-serif - запасной*/
+    font-size: 13px;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    background-color:#f5f5f5;
+    
+}
+
+*,
+*:before, /* не берет во внимание before и after - пишем отдельно*/
+*:after {
+    box-sizing: border-box; /*размер блока = размер + padding + граница*/
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0; 
+    /*убираем отступы сверху и снизу для всех заголовков*/
+}
+
+p {
+    margin: 0 0 10px; /*отступ только снизу*/
+}
+
+.main-title{
+  border-top: 3px solid black;
+  padding-top: 20px;
+}
+
+
+h1.title{
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container{
+  width: 820px;
+  margin: 15px auto;
+  background: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 60px 55px;
+}
+
+
+/*-----------------Personal and Property------------------------*/
+
+.personal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  height: 120px;
+}
+
+.property {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  height: 100px;
+}
+
+
+.personal-right,
+.property-right {
+  margin-right: 25%;
+}
+
+.personal h3, .property h3 {
+  font-size: 1em!important;
+  margin-bottom: 10px;
+}
+
+.personal-left,
+.personal-right,
+.property-left,
+.property-right{
+  width: 150px;
+}
+
+h2.subtitle{
+  font-size: 1.1em;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+
+/*----------------------Dates---------------------------------*/
+
+.dates {
+  margin-bottom: 30px;
+
+}
+
+.dates-row-1, .dates-row-2 {
+  display: grid;
+  grid-template-columns: 3.3fr 1.8fr 2.3fr 1.8fr;
+}
+/*EI Grid Dates Start*/
+.dates-row-1, .dates-row-2 {
+  display: -ms-grid;
+  -ms-grid-columns: 3.3fr 1em 1.8fr 1em 2.3fr 1em 1.8fr;
+}
+
+.dates-row-title:nth-child(1) {
+  -ms-grid-column: 1;
+}
+
+.dates-row-date:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.dates-row-date:nth-child(3) {
+  -ms-grid-column: 5;
+}
+
+.dates-row-date:nth-child(4) {
+  -ms-grid-column: 7;
+}
+/*EI Grid Dates End*/
+
+.dates-row-1 {
+  padding-bottom: 10px;
+}
+
+.dates-row-title{
+  font-weight: 600;
+}
+
+
+/*--------------------Meters-----------------------------*/
+.meters{
+  margin-bottom: 20px;
+}
+
+.meters-header{
+  display: grid;
+  grid-template-columns: 30% 14% 14% 14% 14% 14%;
+  border-top: 3px solid black;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  align-items: center;
+}
+
+/*EI Grid Meters Start*/
+.meters-header, .meters-section  {
+  display: -ms-grid;
+  -ms-grid-columns: 3fr 1em 1.4fr 1em 1.4fr 1em 1.4fr 1em 1.4fr 1em 1.4fr;
+}
+
+.meters-footer {
+  display: -ms-grid;
+  -ms-grid-columns: 6fr 1em 4fr;
+}
+
+.col-1:nth-child(1) {
+  -ms-grid-column: 1;
+}
+
+.col-2:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.col-3:nth-child(3) {
+  -ms-grid-column: 5;
+}
+
+.col-4:nth-child(4) {
+  -ms-grid-column: 7;
+}
+
+.col-5:nth-child(5) {
+  -ms-grid-column: 9;
+}
+
+.col-6:nth-child(6) {
+  -ms-grid-column: 11;
+}
+
+/*EI Grid Meters End*/
+
+.meters-header [class*="col-"]{
+  text-align: right;
+
+}
+
+.meters-section [class*="col-"]{
+  /*display: grid;
+  grid-auto-rows: 1fr;*/
+  text-align: right;
+}
+
+.meters .col-1{
+  text-align: left!important;
+}
+
+
+.meters-section{
+  display: grid;
+  grid-template-columns: 30% 14% 14% 14% 14% 14%;
+  border-bottom: 1px solid black;
+  padding: 5px 0 5px 0;
+}
+
+.meters-footer{
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding: 5px 0 3px 0;
+  border-bottom: 1px solid #000;
+}
+
+.meters-footer [class*="col-"]{
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.meters-footer .col-2 {
+  text-align: right;
+}
+
+.meters-footer .col-1 .row-1 {
+  font-weight: 600;
+}
+
+/*--------------------Services costs--------------------------*/
+
+.services-costs{
+  margin-bottom: 20px;
+}
+
+.services-costs-header{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  border-top: 3px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0 10px 0;
+  align-items: center;
+}
+
+
+.services-costs-section{
+  display: grid;
+  grid-template-columns:3fr 1fr 1fr;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.services-costs-header .col-2,
+.services-costs-header .col-3,
+.services-costs-section .col-2,
+.services-costs-section .col-3,
+.services-costs-footer .col-2,
+.services-costs-footer .col-3{
+  text-align: right;
+}
+
+.services-costs-footer{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  font-weight: 600;
+  border-bottom: 1px solid black;
+  padding: 3px 0 3px 0;
+}
+
+/*IE Grid Start for services costs*/
+.services-costs-header,
+.services-costs-section,
+.services-costs-footer{
+  display: -ms-grid;
+  -ms-grid-columns: 3fr 1em 1fr 1em 1fr;
+}
+
+.col-1:nth-child(1) {
+  -ms-grid-column: 1;
+}
+
+.col-2:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.col-3:nth-child(3) {
+  -ms-grid-column: 5;
+}
+/*IE Grid End for services costs*/
+
+
+
+/*---------Cosnstant costs-------------------*/
+
+
+.const-costs{
+  margin-bottom: 20px;
+}
+
+.const-costs .info{
+  margin: 0 0 20px 20px;
+  
+}
+
+.const-costs-header{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  border-top: 3px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0 10px 0;
+  align-items: center;
+}
+
+.const-costs-section{
+  display: grid;
+  grid-template-columns:3fr 1fr 1fr;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.const-costs-header .col-2,
+.const-costs-header .col-3,
+.const-costs-section .col-2,
+.const-costs-section .col-3,
+.const-costs-footer .col-2,
+.const-costs-footer .col-3{
+  text-align: right;
+}
+.const-costs-footer{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  font-weight: 600;
+  border-bottom: 1px solid black;
+  padding: 3px 0 3px 0;
+}
+
+/*IE Grid Start for consts costs*/
+.const-costs-header,
+.const-costs-section,
+.const-costs-footer{
+  display: -ms-grid;
+  -ms-grid-columns: 3fr 1em 1fr 1em 1fr;
+}
+
+.col-1:nth-child(1) {
+  -ms-grid-column: 1;
+}
+
+.col-2:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.col-3:nth-child(3) {
+  -ms-grid-column: 5;
+}
+/*IE Grid End for const costs*/
+
+/*------------Variabel costs-------------------*/
+.var-costs{
+  margin-bottom: 20px;
+}
+
+.var-costs .info{
+  margin: 0 0 20px 20px;
+  
+}
+
+.var-costs-header{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border-top: 3px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0 10px 0;
+  align-items: center;
+}
+
+.var-costs-section{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.var-costs-header .col-2,
+.var-costs-header .col-3,
+.var-costs-header .col-4,
+.var-costs-section .col-2,
+.var-costs-section .col-3,
+.var-costs-section .col-4,
+.var-costs-footer-one .col-2,
+.var-costs-footer-two .col-2,
+.var-costs-footer-two .col-3,
+.var-costs-footer-two .col-4{
+  text-align: right;
+}
+
+.var-costs-footer-one{
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  font-weight: 600;
+  border-bottom: 1px solid #000;
+  padding: 5px 0 5px 0;
+}
+
+.var-costs-footer-two{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border-bottom: 1px solid #000;
+  align-items: center;
+  padding: 3px 0 3px 0;
+}
+
+.var-costs-footer-two .col-1,
+.var-costs-footer-two .col-4 {
+  font-weight: 600;
+}
+
+
+/*IE Grid Start for variabel costs*/
+.var-costs-header,
+.var-costs-section,
+.var-costs-footer-two{
+  display: -ms-grid;
+  -ms-grid-columns: 2fr 1em 1fr 1em 1fr 1em 1fr;
+}
+
+.var-costs-footer-one{
+  display: -ms-grid;
+  -ms-grid-columns: 3fr 1em 2fr;
+}
+
+.col-1:nth-child(1) {
+  -ms-grid-column: 1;
+}
+
+.col-2:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.col-3:nth-child(3) {
+  -ms-grid-column: 5;
+}
+
+.col-4:nth-child(5) {
+  -ms-grid-column: 7;
+}
+
+/*IE Grid End for variabel costs*/
+
+/*---------------Calculation-------------------*/
+
+.calc{
+  margin-bottom: 20px;
+}
+
+.calc-header{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  border-top: 3px solid black;
+  border-bottom: 1px solid black;
+  padding: 10px 0 10px 0;
+  align-items: center;
+}
+
+.calc-section-one,
+.calc-section-two,
+.calc-footer{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid #000;
+}
+
+.calc-header .col-2,
+.calc-header .col-3,
+.calc-section-one .col-2,
+.calc-section-one .col-3,
+.calc-section-two .col-2,
+.calc-section-two .col-3,
+.calc-footer .col-2,
+.calc-footer .col-3{
+  text-align: right;
+}
+
+.calc-section-two [class*="col-"] .row-1{
+  font-weight: 600;
+}
+
+.calc-footer [class*="col-"] {
+  font-weight: 600;
+}
+
+.date{
+  margin-top: 50px;
+}
+
+/*IE Grid Start for calculation*/
+.var-costs-header,
+.var-costs-section-one,
+.var-costs-section-two,
+.var-footer{
+  display: -ms-grid;
+  -ms-grid-columns: 3fr 1em 1fr 1em 1fr;
+}
+
+.col-1:nth-child(1) {
+  -ms-grid-column: 1;
+}
+
+.col-2:nth-child(2) {
+  -ms-grid-column: 3;
+}
+
+.col-3:nth-child(3) {
+  -ms-grid-column: 5;
+}
+
+
+
+/*IE Grid End for calculation*/
