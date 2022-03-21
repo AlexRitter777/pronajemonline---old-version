@@ -1,0 +1,272 @@
+body {
+    margin: 0; /*у body есть отступы по умолчанию*/
+    font-family: 'Open Sans', sans-serif; /*san-serif - запасной*/
+    font-size: 13px;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    background-color:#f5f5f5;
+    
+}
+
+*,
+*:before, /* не берет во внимание before и after - пишем отдельно*/
+*:after {
+    box-sizing: border-box; /*размер блока = размер + padding + граница*/
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0; 
+    /*убираем отступы сверху и снизу для всех заголовков*/
+}
+
+p {
+    margin: 0 0 10px; /*отступ только снизу*/
+}
+
+.main-title{
+  border-top: 3px solid black;
+  padding-top: 20px;
+}
+
+
+h1.title{
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container{
+  width: 820px;
+  margin: 15px auto;
+  background: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 60px 55px;
+}
+
+.main-title{
+  border-top: 3px solid black;
+  padding-top: 20px;
+}
+
+h2.subtitle{
+  font-size: 1.1em;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+h3.sub-subtitle{
+  font-size: 1em!important;
+  margin-bottom: 5px;
+}
+
+
+.personal-left, .personal-right {
+  float: left;
+  width: 50%;
+ 
+  margin-bottom: 40px;
+}
+
+.property-left, .property-right {
+  float: left;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.admin-text {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+table{
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/*--------Dates----------*/
+.dates {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+
+.dates .col-1 {
+  width: 33%;
+  font-weight: 600;
+  text-align: left;
+}
+.dates .col-2 {
+  width: 17%;
+}
+
+.dates .col-5 {
+  width: 20%;
+}
+
+
+/*-----I. Odečty elektoměrů ---- */
+.electrometers {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.electrometers .col-1{
+  width: 33%;
+}
+
+.electrometers .col-2{
+  width: 17%;
+}
+
+.electrometers .col-5{
+  width: 20%;
+}
+
+.electrometers .col-22{
+  padding-left: 10px;
+}
+
+
+.electrometers .col-2,
+.electrometers .col-3,
+.electrometers .col-4,
+.electrometers .col-5
+{
+  text-align: right;
+}
+
+.electrometers .row-1 {
+  height: 35px;
+  border-top: 3px solid black;
+  border-bottom: 0.5px solid black;
+  
+}
+
+.electrometers .row-2 {
+  height: 25px;
+  border-bottom: 0.5px solid black;
+  
+}
+
+.row-3, .row-4 {
+  height: 20px;
+}
+
+.row-4 {
+  border-bottom: 0.5px solid black;
+}
+
+.electrometers .row-3 .col-2,
+.electrometers .row-3 .col-22 {
+  padding-top: 5px;
+}
+
+.electrometers .row-4 .col-2,
+.electrometers .row-4 .col-22 {
+  padding-bottom: 5px;
+}
+
+/*-----II. Náklady na elektřinu ---- */
+
+.electro-costs {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.electro-costs .col-1{
+  width: 33%;
+}
+
+.electro-costs .col-3 {
+  width: 30%;
+}
+
+.electro-costs .col-4 {
+  width: 20%;
+}
+
+
+
+.electro-costs .col-2,
+.electro-costs .col-3,
+.electro-costs .col-4 {
+  text-align: right;
+}
+
+.electro-costs .row-1 {
+  height: 35px;
+  border-top: 3px solid black;
+  border-bottom: 0.5px solid black;
+ }
+
+ .electro-costs .row-2 [class*="col-"] {
+   padding-top: 3px;
+ }
+
+  .electro-costs .row-3 [class*="col-"] {
+    padding-bottom: 3px;
+ }
+
+   .electro-costs .row-4 [class*="col-"] {
+     padding: 2px 0 2px 0;
+ }
+
+
+.electro-costs .row-4 {
+  border-top: 0.5px solid black;
+  font-weight: 600;
+}
+
+/*-----III. Vyúčtování ---- */
+
+.calculation {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.calculation .col-2,
+.calculation .col-3 {
+  text-align: right;
+}
+
+.calculation .row-1 {
+  height: 35px;
+  border-top: 3px solid black;
+  border-bottom: 0.5px solid black;
+ }
+
+.calculation .row-2{
+  font-weight: 600;
+  
+}
+
+.calculation .row-2 [class*="col-"] {
+  padding-top: 3px;
+}
+
+.calculation .row-3{
+  padding-bottom: 5px;
+  border-bottom: 0.5px solid black;
+}
+
+.calculation .row-3 [class*="col-"] {
+  padding-bottom: 3px;
+}
+
+.calculation .row-4 {
+  height: 30px;
+  font-weight: 600;
+} 
+
+ 
+.calculation .col-1{
+  width: 33%;
+}
+
+.calculation .col-3{
+  width: 20%;
+}
+

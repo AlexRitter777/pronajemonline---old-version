@@ -1,0 +1,411 @@
+body {
+    margin: 0; /*у body есть отступы по умолчанию*/
+    font-family: 'Open Sans', sans-serif; /*san-serif - запасной*/
+    font-size: 13px;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    background-color:#f5f5f5;
+
+}
+
+*,
+*:before, /* не берет во внимание before и after - пишем отдельно*/
+*:after {
+    box-sizing: border-box; /*размер блока = размер + padding + граница*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    /*убираем отступы сверху и снизу для всех заголовков*/
+}
+
+p {
+    margin: 0 0 10px; /*отступ только снизу*/
+}
+
+.main-title{
+    border-top: 3px solid black;
+    padding-top: 20px;
+}
+
+
+h1.title{
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-title{
+    border-top: 3px solid black;
+    padding-top: 20px;
+}
+
+h2.subtitle{
+    font-size: 1.1em;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+h3.sub-subtitle{
+    font-size: 1em!important;
+    margin-bottom: 5px;
+}
+
+
+.personal-left, .personal-right {
+    float: left;
+    width: 50%;
+
+    margin-bottom: 40px;
+}
+
+.property-left, .property-right {
+    float: left;
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+.admin-text {
+    float: left;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 13px;
+}
+
+/*--------Dates----------*/
+.dates {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+
+.dates .col-1 {
+    width: 33%;
+    font-weight: 600;
+    text-align: left;
+}
+.dates .col-2 {
+    width: 17%;
+}
+
+.dates .col-3 {
+    width: 15%;
+}
+
+.dates .col-4 {
+    width: 15%;
+}
+
+.dates .col-5 {
+    width: 20%;
+}
+
+
+/*-----I. Odečty elektoměrů ---- */
+
+/*-Row-1-*/
+
+.electrometers-row-1 {
+    width: 100%;
+    border-top: 3px solid black;
+    border-bottom: 0.5px solid black;
+    text-align: right;
+}
+
+.electrometers-row-1 .col-1 {
+    width: 33%;
+    text-align: left;
+}
+
+.electrometers-row-1 .col-2 {
+    width: 17%;
+ }
+
+.electrometers-row-1 .col-3 {
+    width: 15%;
+}
+
+.electrometers-row-1 .col-4 {
+    width: 15%;
+}
+
+.electrometers-row-1 .col-5 {
+    width: 20%;
+}
+
+.electrometers-row-1 td {
+    padding: 10px 0 10px 0;
+}
+/*-Row-2-*/
+
+.electrometers-row-2 {
+    width: 100%;
+    border-bottom: 0.5px solid black;
+    text-align: right;
+}
+
+.electrometers-row-2 td {
+    padding: 5px 0 5px 0;
+}
+
+.electrometers-row-2 .col-1 {
+    width: 33%;
+    text-align: left;
+}
+
+.electrometers-row-2 .col-2 {
+    width: 17%;
+}
+
+.electrometers-row-2 .col-3 {
+    width: 15%;
+}
+
+.electrometers-row-2 .col-4 {
+    width: 15%;
+}
+
+.electrometers-row-2 .col-5 {
+    width: 20%;
+}
+/*-Row-3-*/
+.electrometers-row-3 {
+    width: 100%;
+    border-bottom: 0.5px solid black;
+    margin-bottom: 20px;
+
+}
+
+.electrometers-row-3 .row-1 td {
+    padding: 5px 0 3px 0;
+}
+
+.electrometers-row-3 .col-1 {
+    width: 33%;
+}
+.electrometers-row-3 .col-2 {
+    width: 67%;
+    padding-left: 5px;
+}
+
+.electrometers-row-3 .row-2 td {
+    padding: 3px 0 5px 0;
+}
+
+
+
+
+/*-----II. Náklady na elektřinu ---- */
+
+/*-Row-1-*/
+
+.electro-costs-row1 {
+    width: 100%;
+}
+
+.electro-costs-row1 .col-1{
+    width: 33%;
+}
+
+.electro-costs-row1 .col-3 {
+    width: 30%;
+}
+
+.electro-costs-row1 .col-4 {
+    width: 20%;
+}
+
+.electro-costs-row1 .col-2,
+.electro-costs-row1 .col-3,
+.electro-costs-row1 .col-4 {
+    text-align: right;
+}
+
+.electro-costs-row1 {
+    border-top: 3px solid black;
+    border-bottom: 0.5px solid black;
+}
+
+.electro-costs-row1 td {
+    padding: 10px 0 10px 0;
+}
+
+/*-Row-2-3-*/
+.electro-costs-row2-3 {
+    width: 100%;
+}
+
+.electro-costs-row2-3 .col-1{
+    width: 33%;
+}
+
+.electro-costs-row2-3 .col-3 {
+    width: 30%;
+}
+
+.electro-costs-row2-3 .col-4 {
+    width: 20%;
+}
+
+.electro-costs-row2-3 .col-2,
+.electro-costs-row2-3 .col-3,
+.electro-costs-row2-3 .col-4 {
+    text-align: right;
+}
+
+.electro-costs-row2-3 {
+    border-bottom: 0.5px solid black;
+}
+
+.electro-costs-row2-3 .row-2 td {
+    padding-top: 5px;
+}
+
+.electro-costs-row2-3 .row-3 td {
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+
+/*-Row-4-*/
+
+.electro-costs-row4 {
+    width: 100%;
+    border-bottom: 0.5px solid black;
+    margin-bottom: 20px;
+
+}
+
+.electro-costs-row4 .col-1{
+    width: 33%;
+}
+
+.electro-costs-row4 .col-3 {
+    width: 30%;
+}
+
+.electro-costs-row4 .col-4 {
+    width: 20%;
+}
+
+.electro-costs-row4 .col-2,
+.electro-costs-row4 .col-3,
+.electro-costs-row4 .col-4 {
+    text-align: right;
+}
+
+.electro-costs-row4 td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+
+
+    /*-----III. Vyúčtování ---- */
+
+/*-Row-1-*/
+
+.calculation-row1 {
+    width: 100%;
+ }
+
+.calculation-row1 .col-2,
+.calculation-row1 .col-3 {
+    text-align: right;
+}
+
+.calculation-row1 {
+    border-top: 3px solid black;
+    border-bottom: 0.5px solid black;
+}
+
+.calculation-row1 .col-1{
+    width: 33%;
+}
+
+.calculation-row1 .col-3{
+    width: 20%;
+}
+
+.calculation-row1 td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*-Row-2-*/
+
+.calculation-row2-3 {
+    width: 100%;
+}
+
+.calculation-row2-3 .col-2,
+.calculation-row2-3 .col-3 {
+    text-align: right;
+}
+
+.calculation-row2-3 {
+    border-bottom: 0.5px solid black;
+}
+
+.calculation-row2-3 .col-1{
+    width: 33%;
+}
+
+.calculation-row2-3 .col-3{
+    width: 20%;
+}
+
+.calculation-row2-3 .row-2 td {
+    padding-top: 5px;
+}
+
+.calculation-row2-3 .row-3 td {
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+
+/*-Row-4-*/
+
+.calculation-row4 {
+    width: 100%;
+}
+
+.calculation-row4 .col-2,
+.calculation-row4 .col-3 {
+    text-align: right;
+}
+
+.calculation-row4 {
+    border-bottom: 0.5px solid black;
+}
+
+.calculation-row4 .col-1{
+    width: 33%;
+}
+
+.calculation-row4 .col-3{
+    width: 20%;
+}
+
+.calculation-row4 td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/*-------Container (only for webview)-----*/
+.container{
+    width: 820px;
+    margin: 15px auto;
+    background: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 60px 55px;
+}
+

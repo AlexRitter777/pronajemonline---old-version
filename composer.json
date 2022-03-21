@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "pronajem\\": "vendor/pronajemonline/core",
+      "app\\": "app"
+    }
+  },
+  "require": {
+    "gabordemooij/redbean": "dev-master",
+    "mpdf/mpdf": "^8.0"
+  }
+}
